@@ -34,7 +34,7 @@ class CacaNiquel {
             this.btnJogar.disabled = true;
             this.btnJogar.style.cursor = 'not-allowed'
 
-            if (this.fichas >= 100) {
+            if (this.fichas > 99) {
                 let slots = this.rodarSlots();
 
                 setTimeout(combs.bind(this), 2100)
@@ -96,7 +96,7 @@ class CacaNiquel {
                     this.btnJogar.style.cursor = 'pointer'
                 };
             } else {
-                alert('Você não tem fichas o suficiente, reinicie o jogo!')
+                alert('Você não tem fichas o suficiente, reinicie o jogo apertando a tecla "f5"!')
             }
         });
     }
