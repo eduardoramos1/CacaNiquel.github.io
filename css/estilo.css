@@ -47,7 +47,7 @@ html,body{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px black solid;
+    border: 2px solid #2f6bff;
     font-size: 3vw;
     background: white;
     transition: .25s all ease-in-out;
@@ -73,7 +73,22 @@ html,body{
 */
 
 .slot-vencedor{
-    background: rgb(4, 204, 4);
+    border-color: #ffd700;
+    background: radial-gradient(circle, #fff79a 10%, #27d73b 55%, #0ca329 100%);
+    box-shadow: 0 0 14px rgba(255, 215, 0, 0.95), 0 0 30px rgba(39, 215, 59, 0.85);
+    animation: brilho-vitoria .4s ease-in-out infinite alternate;
+}
+
+@keyframes brilho-vitoria {
+    0% {
+        transform: scale(1);
+        filter: saturate(1);
+    }
+
+    100% {
+        transform: scale(1.06);
+        filter: saturate(1.7);
+    }
 }
 
 .aviso{
