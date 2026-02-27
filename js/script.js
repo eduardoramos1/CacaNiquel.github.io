@@ -2,7 +2,9 @@ class CacaNiquel {
     constructor() {
         this.btnJogar = document.querySelector('.jogar');
         this.fichas = 2000;
+        this.partidasJogadas = 0;
         this.alertaDeFichas = document.querySelector('.fichas');
+        this.alertaPartidas = document.querySelector('.partidas');
         this.avisoDeVitoriaOuDerrota = document.querySelector('.aviso')
 
         this.iniciarJogo();
@@ -35,6 +37,8 @@ class CacaNiquel {
             this.btnJogar.style.cursor = 'not-allowed'
 
             if (this.fichas > 99) {
+                this.partidasJogadas += 1;
+                this.atualizarPartidas();
                 let slots = this.rodarSlots();
 
                 setTimeout(combs.bind(this), 2100)
@@ -127,6 +131,10 @@ class CacaNiquel {
 
     atualizarFichas() {
         this.alertaDeFichas.innerHTML = `Número de fichas: ${this.fichas}`
+    }
+
+    atualizarPartidas() {
+        this.alertaPartidas.innerHTML = `Partidas jogadas: ${this.partidasJogadas}`
     }
 
     avisoVitoriaOuDerrota(venceu = true) {
